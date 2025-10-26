@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		C580091A2EAE7BF100C1E23F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C58009042EAE7BEF00C1E23F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C580090B2EAE7BEF00C1E23F;
+			remoteInfo = "The Guilt Control";
+		};
+		C58009242EAE7BF100C1E23F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C58009042EAE7BEF00C1E23F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C580090B2EAE7BEF00C1E23F;
+			remoteInfo = "The Guilt Control";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C580090C2EAE7BEF00C1E23F /* The Guilt Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Guilt Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C58009192EAE7BF100C1E23F /* The Guilt ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Guilt ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C58009232EAE7BF100C1E23F /* The Guilt ControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Guilt ControlUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C580090E2EAE7BEF00C1E23F /* The Guilt Control */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "The Guilt Control";
+			sourceTree = "<group>";
+		};
+		C580091C2EAE7BF100C1E23F /* The Guilt ControlTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "The Guilt ControlTests";
+			sourceTree = "<group>";
+		};
+		C58009262EAE7BF100C1E23F /* The Guilt ControlUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "The Guilt ControlUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C58009092EAE7BEF00C1E23F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C58009162EAE7BF100C1E23F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C58009202EAE7BF100C1E23F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C58009032EAE7BEF00C1E23F = {
+			isa = PBXGroup;
+			children = (
+				C580090E2EAE7BEF00C1E23F /* The Guilt Control */,
+				C580091C2EAE7BF100C1E23F /* The Guilt ControlTests */,
+				C58009262EAE7BF100C1E23F /* The Guilt ControlUITests */,
+				C580090D2EAE7BEF00C1E23F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C580090D2EAE7BEF00C1E23F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C580090C2EAE7BEF00C1E23F /* The Guilt Control.app */,
+				C58009192EAE7BF100C1E23F /* The Guilt ControlTests.xctest */,
+				C58009232EAE7BF100C1E23F /* The Guilt ControlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C580090B2EAE7BEF00C1E23F /* The Guilt Control */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C580092D2EAE7BF100C1E23F /* Build configuration list for PBXNativeTarget "The Guilt Control" */;
+			buildPhases = (
+				C58009082EAE7BEF00C1E23F /* Sources */,
+				C58009092EAE7BEF00C1E23F /* Frameworks */,
+				C580090A2EAE7BEF00C1E23F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C580090E2EAE7BEF00C1E23F /* The Guilt Control */,
+			);
+			name = "The Guilt Control";
+			packageProductDependencies = (
+			);
+			productName = "The Guilt Control";
+			productReference = C580090C2EAE7BEF00C1E23F /* The Guilt Control.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C58009182EAE7BF100C1E23F /* The Guilt ControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C58009302EAE7BF100C1E23F /* Build configuration list for PBXNativeTarget "The Guilt ControlTests" */;
+			buildPhases = (
+				C58009152EAE7BF100C1E23F /* Sources */,
+				C58009162EAE7BF100C1E23F /* Frameworks */,
+				C58009172EAE7BF100C1E23F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C580091B2EAE7BF100C1E23F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C580091C2EAE7BF100C1E23F /* The Guilt ControlTests */,
+			);
+			name = "The Guilt ControlTests";
+			packageProductDependencies = (
+			);
+			productName = "The Guilt ControlTests";
+			productReference = C58009192EAE7BF100C1E23F /* The Guilt ControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C58009222EAE7BF100C1E23F /* The Guilt ControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C58009332EAE7BF100C1E23F /* Build configuration list for PBXNativeTarget "The Guilt ControlUITests" */;
+			buildPhases = (
+				C580091F2EAE7BF100C1E23F /* Sources */,
+				C58009202EAE7BF100C1E23F /* Frameworks */,
+				C58009212EAE7BF100C1E23F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C58009252EAE7BF100C1E23F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C58009262EAE7BF100C1E23F /* The Guilt ControlUITests */,
+			);
+			name = "The Guilt ControlUITests";
+			packageProductDependencies = (
+			);
+			productName = "The Guilt ControlUITests";
+			productReference = C58009232EAE7BF100C1E23F /* The Guilt ControlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C58009042EAE7BEF00C1E23F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					C580090B2EAE7BEF00C1E23F = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					C58009182EAE7BF100C1E23F = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = C580090B2EAE7BEF00C1E23F;
+					};
+					C58009222EAE7BF100C1E23F = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = C580090B2EAE7BEF00C1E23F;
+					};
+				};
+			};
+			buildConfigurationList = C58009072EAE7BEF00C1E23F /* Build configuration list for PBXProject "The Guilt Control" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C58009032EAE7BEF00C1E23F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C580090D2EAE7BEF00C1E23F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C580090B2EAE7BEF00C1E23F /* The Guilt Control */,
+				C58009182EAE7BF100C1E23F /* The Guilt ControlTests */,
+				C58009222EAE7BF100C1E23F /* The Guilt ControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C580090A2EAE7BEF00C1E23F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C58009172EAE7BF100C1E23F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C58009212EAE7BF100C1E23F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C58009082EAE7BEF00C1E23F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C58009152EAE7BF100C1E23F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C580091F2EAE7BF100C1E23F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C580091B2EAE7BF100C1E23F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C580090B2EAE7BEF00C1E23F /* The Guilt Control */;
+			targetProxy = C580091A2EAE7BF100C1E23F /* PBXContainerItemProxy */;
+		};
+		C58009252EAE7BF100C1E23F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C580090B2EAE7BEF00C1E23F /* The Guilt Control */;
+			targetProxy = C58009242EAE7BF100C1E23F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C580092B2EAE7BF100C1E23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C580092C2EAE7BF100C1E23F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C580092E2EAE7BF100C1E23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antonyashwin.The-Guilt-Control";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C580092F2EAE7BF100C1E23F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antonyashwin.The-Guilt-Control";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C58009312EAE7BF100C1E23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antonyashwin.The-Guilt-ControlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Guilt Control.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/The Guilt Control";
+			};
+			name = Debug;
+		};
+		C58009322EAE7BF100C1E23F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antonyashwin.The-Guilt-ControlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Guilt Control.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/The Guilt Control";
+			};
+			name = Release;
+		};
+		C58009342EAE7BF100C1E23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antonyashwin.The-Guilt-ControlUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Guilt Control";
+			};
+			name = Debug;
+		};
+		C58009352EAE7BF100C1E23F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MJ62S99W7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antonyashwin.The-Guilt-ControlUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Guilt Control";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C58009072EAE7BEF00C1E23F /* Build configuration list for PBXProject "The Guilt Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C580092B2EAE7BF100C1E23F /* Debug */,
+				C580092C2EAE7BF100C1E23F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C580092D2EAE7BF100C1E23F /* Build configuration list for PBXNativeTarget "The Guilt Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C580092E2EAE7BF100C1E23F /* Debug */,
+				C580092F2EAE7BF100C1E23F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C58009302EAE7BF100C1E23F /* Build configuration list for PBXNativeTarget "The Guilt ControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C58009312EAE7BF100C1E23F /* Debug */,
+				C58009322EAE7BF100C1E23F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C58009332EAE7BF100C1E23F /* Build configuration list for PBXNativeTarget "The Guilt ControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C58009342EAE7BF100C1E23F /* Debug */,
+				C58009352EAE7BF100C1E23F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C58009042EAE7BEF00C1E23F /* Project object */;
+}
