@@ -96,11 +96,37 @@ final class TapHistoryStore: ObservableObject {
         return min(decayedTotalMinutes / fullRedMinutes, 1.0)
     }
 
-    // Interpolate RGB from green (0,1,0) to red (1,0,0)
+    // Interpolate muted green -> warm red (reduced brightness & contrast)
+    // Adjust these tuples to taste (values 0...1)
+    private let startRGB = (r: 0.20, g: 0.45, b: 0.30) // muted green
+    private let midRGB   = (r: 0.65, g: 0.50, b: 0.20) // warm amber (mid warning)
+    private let endRGB   = (r: 0.70, g: 0.25, b: 0.25) // muted red
+
+    // Gamma < 1 shifts curve so red arrives a bit later; >1 would delay it more
+    private let gamma: Double = 0.85
+
     var currentColor: Color {
-        let p = progress
-        return Color(red: p, green: 1 - p, blue: 0)
+        let pLinear = progress
+        let p = pow(pLinear, gamma) // ease
+        // Two‑segment interpolation: green→amber (0..0.55), amber→red (0.55..1)
+        let split: Double = 0.55
+        let (r, g, b): (Double, Double, Double)
+        if p <= split {
+            let t = p / split
+            r = lerp(startRGB.r, midRGB.r, t)
+            g = lerp(startRGB.g, midRGB.g, t)
+            b = lerp(startRGB.b, midRGB.b, t)
+        } else {
+            let t = (p - split) / (1 - split)
+            r = lerp(midRGB.r, endRGB.r, t)
+            g = lerp(midRGB.g, endRGB.g, t)
+            b = lerp(midRGB.b, endRGB.b, t)
+        }
+        return Color(red: r, green: g, blue: b)
     }
+
+    // Simple linear interpolation
+    private func lerp(_ a: Double, _ b: Double, _ t: Double) -> Double { a + (b - a) * t }
 
     // MARK: Persistence
     private func persist() {
