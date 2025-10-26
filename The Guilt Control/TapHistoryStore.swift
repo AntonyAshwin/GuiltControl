@@ -229,6 +229,12 @@ final class TapHistoryStore: ObservableObject {
         return entries.filter { $0.date >= cutoff }.reduce(0) { $0 + $1.minutes }
     }
 
+    // PUBLIC: minutes in last 7 days (no decay)
+    var last7dMinutes: Int {
+        let cutoff = Date().addingTimeInterval(-7 * 24 * 3600)
+        return entries.filter { $0.date >= cutoff }.reduce(0) { $0 + $1.minutes }
+    }
+
     // PUBLIC: decayed minutes (was private) used for color
     var decayedMinutes: Double {
         decayedTotalMinutes

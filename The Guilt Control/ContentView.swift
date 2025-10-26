@@ -24,14 +24,18 @@ struct ContentView: View {
 
             overlay
 
-            // Center stack: exclamation (if black stage) + BIG total + input
+            // Center stack: reserved exclamation space, totals, input
             VStack(spacing: 28) {
-                if store.isBlackStage {
-                    CriticalMarkView()
-                        .transition(.scale.combined(with: .opacity))
+                // Reserve space so totals don't jump when exclamation appears
+                ZStack {
+                    if store.isBlackStage {
+                        CriticalMarkView()
+                            .transition(.scale.combined(with: .opacity))
+                    }
+                    CriticalMarkView().hidden() // keeps height
                 }
 
-                bigTotalView   // Large total time (driving color)
+                totalsView   // All‑time + last 7 days
 
                 centerMinutesInput
             }
@@ -87,18 +91,25 @@ struct ContentView: View {
         .animation(.default, value: tapMinutes)
     }
 
-    // Large total time display (decayed minutes -> same size as input field)
-    private var bigTotalView: some View {
-        let minutes = store.decayedMinutesRounded
-        return Text(displayString(for: minutes))
-            .font(.system(size: 54, weight: .bold, design: .rounded))
-            .monospacedDigit()
-            .padding(.horizontal, 28)
-            .padding(.vertical, 14)
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
-            .shadow(radius: 12, y: 4)
-            .accessibilityLabel("Total time affecting color \(minutes) minutes")
-            .transition(.opacity.combined(with: .scale))
+    // NEW: All‑time total (big) + last 7 days (small)
+    private var totalsView: some View {
+        let allTime = store.totalMinutesAllTime
+        let week = store.last7dMinutes
+        return VStack(spacing: 6) {
+            Text(displayString(for: allTime))
+                .font(.system(size: 54, weight: .bold, design: .rounded))
+                .monospacedDigit()
+            Text("Past 7d: \(displayString(for: week))")
+                .font(.footnote.monospaced())
+                .foregroundStyle(.secondary)
+        }
+        .padding(.horizontal, 28)
+        .padding(.vertical, 18)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
+        .shadow(radius: 12, y: 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("All time \(allTime) minutes. Past 7 days \(week) minutes.")
+        .transition(.opacity.combined(with: .scale))
     }
 
     // Centered minutes editor
