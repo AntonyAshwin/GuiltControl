@@ -23,11 +23,20 @@ struct ContentView: View {
                 .animation(.easeInOut(duration: 0.25), value: store.progress)
 
             overlay
-            centerMinutesInput
+
+            // Center stack: exclamation (when black) ABOVE minutes input
+            VStack(spacing: 28) {
+                if store.isBlackStage {
+                    CriticalMarkView()
+                        .transition(.scale.combined(with: .opacity))
+                        .accessibilityHidden(false)
+                }
+                centerMinutesInput
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .contentShape(Rectangle()) // whole screen tappable
+        .contentShape(Rectangle())
         .onTapGesture {
-            // Avoid recording a tap while user is editing minutes
             guard !minutesFieldFocused else {
                 minutesFieldFocused = false
                 return
@@ -39,7 +48,7 @@ struct ContentView: View {
             HistoryView(isPresented: $showHistory)
                 .environmentObject(store)
         }
-        .toolbar { // Keyboard accessory Done button
+        .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Done") { minutesFieldFocused = false }
@@ -147,6 +156,32 @@ private extension ContentView {
             tapMinutes = clamped
             minutesInput = String(clamped)
         }
+    }
+}
+
+// Pulsing exclamation mark for critical (black) stage
+private struct CriticalMarkView: View {
+    @State private var pulse = false
+    var body: some View {
+        Text("!")
+            .font(.system(size: 180, weight: .black, design: .rounded))
+            .foregroundStyle(
+                LinearGradient(colors: [.red, .orange, .yellow],
+                               startPoint: .top,
+                               endPoint: .bottom)
+            )
+            .shadow(color: .red.opacity(0.85), radius: 24, x: 0, y: 0)
+            .shadow(color: .orange.opacity(0.4), radius: 40)
+            .scaleEffect(pulse ? 1.18 : 0.82)
+            .opacity(pulse ? 1.0 : 0.55)
+            .blendMode(.plusLighter)
+            .allowsHitTesting(false)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 0.85).repeatForever(autoreverses: true)) {
+                    pulse = true
+                }
+            }
+            .accessibilityLabel("Critical level reached")
     }
 }
 

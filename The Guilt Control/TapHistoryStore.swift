@@ -96,35 +96,65 @@ final class TapHistoryStore: ObservableObject {
         return min(decayedTotalMinutes / fullRedMinutes, 1.0)
     }
 
-    // Interpolate muted green -> warm red (reduced brightness & contrast)
-    // Adjust these tuples to taste (values 0...1)
-    // (Updated startRGB to be a bit brighter / less dark while still muted)
-    private let startRGB = (r: 0.32, g: 0.63, b: 0.46) // softened brighter green
-    private let midRGB   = (r: 0.65, g: 0.50, b: 0.20) // warm amber (mid warning)
-    private let endRGB   = (r: 0.70, g: 0.25, b: 0.25) // muted red
+    // Progress thresholds for staged "decay"
+    // 0–s1: fresh green → browning
+    // s1–s2: browning → rotten red
+    // s2–s3: rotten red → bruised purple
+    // s3–1: bruised purple → danger black
+    private let s1: Double = 0.35
+    private let s2: Double = 0.65
+    private let s3: Double = 0.85
 
-    // Gamma < 1 shifts curve so red arrives a bit later; >1 would delay it more
-    private let gamma: Double = 0.85
+    // Tunable gamma ( <1 = reach later colors sooner / faster decay feel )
+    private let gamma: Double = 0.88
+
+    // Palette (muted & progressively darker)
+    private let freshRGB      = (r: 0.38, g: 0.74, b: 0.46) // fresh healthy green
+    private let browningRGB   = (r: 0.60, g: 0.52, b: 0.24) // early rot (olive / amber)
+    private let rottenRedRGB  = (r: 0.62, g: 0.20, b: 0.18) // dull spoiled red
+    private let bruiseRGB     = (r: 0.42, g: 0.22, b: 0.50) // dark bruised purple
+    private let blackRGB      = (r: 0.03, g: 0.03, b: 0.04) // near-black (soft)
 
     var currentColor: Color {
         let pLinear = progress
-        let p = pow(pLinear, gamma) // ease
-        // Two‑segment interpolation: green→amber (0..0.55), amber→red (0.55..1)
-        let split: Double = 0.55
-        let (r, g, b): (Double, Double, Double)
-        if p <= split {
-            let t = p / split
-            r = lerp(startRGB.r, midRGB.r, t)
-            g = lerp(startRGB.g, midRGB.g, t)
-            b = lerp(startRGB.b, midRGB.b, t)
-        } else {
-            let t = (p - split) / (1 - split)
-            r = lerp(midRGB.r, endRGB.r, t)
-            g = lerp(midRGB.g, endRGB.g, t)
-            b = lerp(midRGB.b, endRGB.b, t)
+        let p = pow(pLinear, gamma)
+
+        let (r,g,b): (Double,Double,Double)
+        switch p {
+        case ..<s1:
+            let t = p / s1
+            (r,g,b) = (
+                lerp(freshRGB.r, browningRGB.r, t),
+                lerp(freshRGB.g, browningRGB.g, t),
+                lerp(freshRGB.b, browningRGB.b, t)
+            )
+        case ..<s2:
+            let t = (p - s1) / (s2 - s1)
+            (r,g,b) = (
+                lerp(browningRGB.r, rottenRedRGB.r, t),
+                lerp(browningRGB.g, rottenRedRGB.g, t),
+                lerp(browningRGB.b, rottenRedRGB.b, t)
+            )
+        case ..<s3:
+            let t = (p - s2) / (s3 - s2)
+            (r,g,b) = (
+                lerp(rottenRedRGB.r, bruiseRGB.r, t),
+                lerp(rottenRedRGB.g, bruiseRGB.g, t),
+                lerp(rottenRedRGB.b, bruiseRGB.b, t)
+            )
+        default:
+            let t = (p - s3) / (1 - s3)
+            (r,g,b) = (
+                lerp(bruiseRGB.r, blackRGB.r, t),
+                lerp(bruiseRGB.g, blackRGB.g, t),
+                lerp(bruiseRGB.b, blackRGB.b, t)
+            )
         }
         return Color(red: r, green: g, blue: b)
     }
+
+    // Trigger "danger" state only once we enter final (black) band
+    var isBlackStage: Bool { progress >= s3 }
 
     // Simple linear interpolation
     private func lerp(_ a: Double, _ b: Double, _ t: Double) -> Double { a + (b - a) * t }
