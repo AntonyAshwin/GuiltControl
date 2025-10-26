@@ -98,7 +98,8 @@ final class TapHistoryStore: ObservableObject {
 
     // Interpolate muted green -> warm red (reduced brightness & contrast)
     // Adjust these tuples to taste (values 0...1)
-    private let startRGB = (r: 0.20, g: 0.45, b: 0.30) // muted green
+    // (Updated startRGB to be a bit brighter / less dark while still muted)
+    private let startRGB = (r: 0.32, g: 0.63, b: 0.46) // softened brighter green
     private let midRGB   = (r: 0.65, g: 0.50, b: 0.20) // warm amber (mid warning)
     private let endRGB   = (r: 0.70, g: 0.25, b: 0.25) // muted red
 
