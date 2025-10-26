@@ -24,13 +24,15 @@ struct ContentView: View {
 
             overlay
 
-            // Center stack: exclamation (when black) ABOVE minutes input
+            // Center stack: exclamation (if black stage) + BIG total + input
             VStack(spacing: 28) {
                 if store.isBlackStage {
                     CriticalMarkView()
                         .transition(.scale.combined(with: .opacity))
-                        .accessibilityHidden(false)
                 }
+
+                bigTotalView   // Large total time (driving color)
+
                 centerMinutesInput
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -83,6 +85,20 @@ struct ContentView: View {
         }
         .animation(.spring(duration: 0.35), value: store.count)
         .animation(.default, value: tapMinutes)
+    }
+
+    // Large total time display (decayed minutes -> same size as input field)
+    private var bigTotalView: some View {
+        let minutes = store.decayedMinutesRounded
+        return Text(displayString(for: minutes))
+            .font(.system(size: 54, weight: .bold, design: .rounded))
+            .monospacedDigit()
+            .padding(.horizontal, 28)
+            .padding(.vertical, 14)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 32, style: .continuous))
+            .shadow(radius: 12, y: 4)
+            .accessibilityLabel("Total time affecting color \(minutes) minutes")
+            .transition(.opacity.combined(with: .scale))
     }
 
     // Centered minutes editor
@@ -157,6 +173,14 @@ private extension ContentView {
             minutesInput = String(clamped)
         }
     }
+
+    func displayString(for totalMinutes: Int) -> String {
+        let h = totalMinutes / 60
+        let m = totalMinutes % 60
+        if h == 0 { return "\(m)m" }
+        if m == 0 { return "\(h)h" }
+        return "\(h)h \(m)m"
+    }
 }
 
 // Pulsing exclamation mark for critical (black) stage
@@ -170,7 +194,7 @@ private struct CriticalMarkView: View {
                                startPoint: .top,
                                endPoint: .bottom)
             )
-            .shadow(color: .red.opacity(0.85), radius: 24, x: 0, y: 0)
+            .shadow(color: .red.opacity(0.85), radius: 24)
             .shadow(color: .orange.opacity(0.4), radius: 40)
             .scaleEffect(pulse ? 1.18 : 0.82)
             .opacity(pulse ? 1.0 : 0.55)

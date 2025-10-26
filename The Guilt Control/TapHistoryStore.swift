@@ -217,4 +217,34 @@ final class TapHistoryStore: ObservableObject {
     func format(_ date: Date) -> String {
         dateFormatter.string(from: date)
     }
+
+    // PUBLIC: total (non‑decayed) minutes across all entries
+    var totalMinutesAllTime: Int {
+        entries.reduce(0) { $0 + $1.minutes }
+    }
+
+    // PUBLIC: raw minutes in last 24h (no decay)
+    var last24hMinutes: Int {
+        let cutoff = Date().addingTimeInterval(-repairWindow)
+        return entries.filter { $0.date >= cutoff }.reduce(0) { $0 + $1.minutes }
+    }
+
+    // PUBLIC: decayed minutes (was private) used for color
+    var decayedMinutes: Double {
+        decayedTotalMinutes
+    }
+
+    // Expose a rounded string-friendly value
+    var decayedMinutesRounded: Int { Int(decayedMinutes.rounded()) }
+
+    // Convenience formatting: 135 -> "2h 15m" / 45 -> "45m"
+    func formatMinutesHM(_ minutes: Int) -> String {
+        let h = minutes / 60
+        let m = minutes % 60
+        switch (h, m) {
+        case (0, _): return "\(m)m"
+        case (_, 0): return "\(h)h"
+        default: return "\(h)h \(m)m"
+        }
+    }
 }
