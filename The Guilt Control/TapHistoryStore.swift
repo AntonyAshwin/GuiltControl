@@ -30,7 +30,8 @@ final class TapHistoryStore: ObservableObject {
     private let key = "TapHistoryStore.entries"
 
     // MARK: - New configuration (tune if desired)
-    private let repairWindow: TimeInterval = 24 * 3600      // Each entry fades to 0 influence over 24h
+    // Each entry now decays to zero influence over 72h (was 24h) for harsher recovery
+    private let repairWindow: TimeInterval = 72 * 3600  // 72 hours
     private let fullRedMinutes: Double = 120                // Decayed minutes needed for full red (≈ four 30‑min sessions)
 
     private var decayTimer: Timer?
